@@ -3,8 +3,7 @@ package marcin.dohnalik.studia;
 public class Android extends Device {
 
 	public void fillRegistrationForm() {
-		// TODO - implement Android.fillRegistrationForm
-		throw new UnsupportedOperationException();
+		System.out.println("RegistrationForm not yet implemented");
 	}
 
 }
