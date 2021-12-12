@@ -1,22 +1,18 @@
 package marcin.dohnalik.studia;
 
-public class Device {
+public abstract class Device {
 
 	private int id;
+	private int selectedNotify;
 
-	public void fillRegistrationForm() {
-		// TODO - implement Device.fillDeregistrationForm
-		throw new UnsupportedOperationException();
+	public abstract void fillRegistrationForm();
+
+	public void notifyDevice(int gameId) {
+		if(selectedNotify == gameId) System.out.println("Device" + this.id + " has been notified!");
 	}
 
-	public void notifyDevice() {
-		// TODO - implement Device.notifyDevice
-		throw new UnsupportedOperationException();
-	}
-
-	public void followGame() {
-		// TODO - implement Device.followGame
-		throw new UnsupportedOperationException();
+	public void followGame(int gameId) {
+		selectedNotify = gameId;
 	}
 
 }
