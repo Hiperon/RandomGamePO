@@ -1,27 +1,57 @@
 package marcin.dohnalik.studia;
 
-public class Game {
-	Engine engine = new Engine();
-	int test = engine.getRandomReturn(10);
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-	@Override
-	public String toString() {
-		return "Game{" +
-				"test=" + test +
-				'}';
-	}
+public class Game implements IObservable {
 
-	private String Observers;
+    private List<IObserver> observers;
 
-	public void sendResults() {
-		// TODO - implement Game.sendResults
-		throw new UnsupportedOperationException();
-	}
+    public Game() {
+        this.observers = new ArrayList<IObserver>();
+    }
 
-	public static void main(String[] args) {
-		for (int i = 0; i < 10; i++) {
-			System.out.println(new Game());
-		}
-	}
+    private String name;
+    private int result;
+
+    public String getGameName(){
+        return name;
+    }
+
+    @Override
+    public void addObserver(IObserver observer) {
+        if(observer != null){
+            this.observers.add(observer);
+        }
+    }
+
+    @Override
+    public void removeObserver(IObserver observer) {
+        if(observer != null){
+            this.observers.remove(observer);
+        }
+    }
+
+    @Override
+    public void notifyObservers() {
+        Iterator<IObserver> it = observers.iterator();
+        while(it.hasNext()){
+            IObserver observer = it.next();
+            observer.notify(this);
+        }
+    }
+
+    public int getGameResult(){
+        return result;
+    }
+
+    public void updateGameResult(int updatedResult){
+        this.result = updatedResult;
+        this.notifyObservers();
+    }
+
+    public void setName(String gameName){
+        this.name = gameName;
+    }
 }
-
