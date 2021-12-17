@@ -3,9 +3,9 @@ package marcin.dohnalik.studia;
 public class BlackBerryDevices extends Devices {
 
     private String firstName;
-    private int phoneNumber;
+    private String phoneNumber;
 
-    public BlackBerryDevices(String firstName, int phoneNumber) {
+    public BlackBerryDevices(String firstName, String phoneNumber) {
         this.firstName=firstName;
         this.phoneNumber=phoneNumber;
     }
