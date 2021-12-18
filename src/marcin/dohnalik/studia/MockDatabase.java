@@ -4,5 +4,5 @@ import java.util.Map;
 
 public class MockDatabase {
 
-    public static Map<String, String>
+    //public static Map<String, String>
 }

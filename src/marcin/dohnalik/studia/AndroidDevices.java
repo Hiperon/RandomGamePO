@@ -1,5 +1,7 @@
 package marcin.dohnalik.studia;
 
+import java.util.Arrays;
+
 public class AndroidDevices extends Devices {
 
     /* 1) Zmieniłam wszędzie phone number na String, normalnie tak się je przechowuje bo często zawierają znaki specjalne (+, -) a poza tym nie podlegają działaniom matematycznym ani innym operacjom.
@@ -18,6 +20,6 @@ public class AndroidDevices extends Devices {
     }
 
     public void notify(Game game) {
-        System.out.println("Android (" + login + "): " + game.getGameName() + " has result: "+ game.getGameResult());
+        System.out.println("Android (" + login + "): " + game.getGameName() + " has result: "+ Arrays.toString(game.getGameResult()));
     }
 }

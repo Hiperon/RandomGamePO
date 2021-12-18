@@ -1,5 +1,7 @@
 package marcin.dohnalik.studia;
 
+import java.util.Arrays;
+
 public class WindowsPhoneDevices extends Devices {
 
     private String firstName;
@@ -11,6 +13,6 @@ public class WindowsPhoneDevices extends Devices {
     }
 
     public void notify(Game game) {
-        System.out.println("WindowsPhone (" + firstName + "): " + game.getGameName() + " has result: "+ game.getGameResult());
+        System.out.println("WindowsPhone (" + firstName + "): " + game.getGameName() + " has result: "+ Arrays.toString(game.getGameResult()));
     }
 }

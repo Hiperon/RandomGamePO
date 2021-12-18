@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
+
 public class Game implements IObservable {
 
     private List<IObserver> observers;
@@ -13,7 +15,7 @@ public class Game implements IObservable {
     }
 
     private String name;
-    private int result;
+    private int[] result;
 
     public String getGameName(){
         return name;
@@ -42,11 +44,11 @@ public class Game implements IObservable {
         }
     }
 
-    public int getGameResult(){
-        return result;
+    public int[] getGameResult(){
+        return this.result;
     }
 
-    public void updateGameResult(int updatedResult){
+    public void updateGameResult(int[] updatedResult){
         this.result = updatedResult;
         this.notifyObservers();
     }

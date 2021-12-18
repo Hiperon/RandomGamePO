@@ -24,10 +24,10 @@ public class LottoGame {
         game2.addObserver(iPhone);
         game2.addObserver(blackBerry);
 
-        for(int i =0; i<300; i++){
+/*        for(int i =0; i<300; i++){
             game1.updateGameResult((int)(Math.random()*101)+1);
             game2.updateGameResult((int)(Math.random()*101)+1);
-        }
+        }*/
 
 
     }
